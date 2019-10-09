@@ -10,6 +10,17 @@ namespace Module1_1
     {
         static void Main(string[] args)
         {
+            Console.Write("Введите a: ");
+            int a = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Введите b: ");
+            int b = Convert.ToInt32(Console.ReadLine());
+
+            int temp = a;
+            a = b;
+            b = temp;
+
+            Console.WriteLine($"a = {a} \nb = {b}");
         }
     }
 }
