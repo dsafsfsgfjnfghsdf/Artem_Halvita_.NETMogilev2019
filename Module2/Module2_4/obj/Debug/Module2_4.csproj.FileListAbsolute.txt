@@ -1,0 +1,6 @@
+C:\Users\artem\Desktop\Artem_Halvita_.NETMogilev2019\Module2_1\Module2_4\bin\Debug\Module2_4.exe.config
+C:\Users\artem\Desktop\Artem_Halvita_.NETMogilev2019\Module2_1\Module2_4\bin\Debug\Module2_4.exe
+C:\Users\artem\Desktop\Artem_Halvita_.NETMogilev2019\Module2_1\Module2_4\bin\Debug\Module2_4.pdb
+C:\Users\artem\Desktop\Artem_Halvita_.NETMogilev2019\Module2_1\Module2_4\obj\Debug\Module2_4.csprojAssemblyReference.cache
+C:\Users\artem\Desktop\Artem_Halvita_.NETMogilev2019\Module2_1\Module2_4\obj\Debug\Module2_4.exe
+C:\Users\artem\Desktop\Artem_Halvita_.NETMogilev2019\Module2_1\Module2_4\obj\Debug\Module2_4.pdb
