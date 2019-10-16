@@ -13,15 +13,15 @@ namespace Module2_3
         static void Main(string[] args)
         {
             Console.Write("Введите число a: ");
-            string UserAnswerA = Console.ReadLine();
+            string userAnswerA = Console.ReadLine();
 
             Console.Write("Введите число b: ");
-            string UserAnswerB = Console.ReadLine();
+            string userAnswerB = Console.ReadLine();
 
-            double a, b;
+            double numberA, numberB;
 
-            bool ResultA = double.TryParse(UserAnswerA, out a);
-            bool ResultB = double.TryParse(UserAnswerB, out b);
+            bool resultA = double.TryParse(userAnswerA, out numberA);
+            bool resultB = double.TryParse(userAnswerB, out numberB);
 
             NumberFormatInfo numberformatinfo = new NumberFormatInfo()
             {
@@ -30,17 +30,17 @@ namespace Module2_3
 
             try
             {
-                if (!ResultA)
-                    a = double.Parse(UserAnswerA, numberformatinfo);
+                if (!resultA)
+                    numberA = double.Parse(userAnswerA, numberformatinfo);
 
-                if (!ResultB)
-                    b = double.Parse(UserAnswerB, numberformatinfo);
+                if (!resultB)
+                    numberB = double.Parse(userAnswerB, numberformatinfo);
 
-                double temp = a;
-                a = b;
-                b = temp;
+                double temp = numberA;
+                numberA = numberB;
+                numberB = temp;
 
-                Console.WriteLine($"\na = {a}\nb = {b}\n");
+                Console.WriteLine($"\na = {numberA}\nb = {numberB}\n");
             }
 
             catch
