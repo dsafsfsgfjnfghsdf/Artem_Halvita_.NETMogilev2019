@@ -10,13 +10,13 @@ namespace Module2_2
     {
         static void Main(string[] args)
         {
-            Console.Write("Введите N: ");
-            int N = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Введите возраст: ");
+            int age = Convert.ToInt32(Console.ReadLine());
 
-            if ((N % 2 == 0) && (N >= 18))
+            if ((age % 2 == 0) && (age >= 18))
                 Console.WriteLine("Поздравляю с 18-и летием");
 
-            else if ((N % 2 != 0) && (N > 13) && (N < 18))
+            else if ((age % 2 != 0) && (age > 13) && (age < 18))
                 Console.WriteLine("Поздравляю с переходом в старшую школу");
         }
     }
