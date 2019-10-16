@@ -11,26 +11,26 @@ namespace Module3_7
         static void Main(string[] args)
         {
             Console.Write("Введте количество элементов массива: ");
-            int n = Convert.ToInt32(Console.ReadLine());
+            int quantity = Convert.ToInt32(Console.ReadLine());
 
-            int[] arr = new int[n];
+            int[] array = new int[quantity];
 
-            Random rand = new Random();
+            Random random = new Random();
 
             Console.WriteLine("Исходный массив:");
 
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < quantity; i++)
             {
-                arr[i] = rand.Next(0, 9);
-                Console.Write($"{arr[i]} ");
+                array[i] = random.Next(0, 9);
+                Console.Write($"{array[i]} ");
             }
 
             Console.WriteLine("\nЭлементы числового массива, которые больше, чем элементы, стоящие перед ними:");
 
-            for (int i = 0; i < n - 1; i++)
+            for (int i = 0; i < quantity - 1; i++)
             {
-                if (arr[i] < arr[i + 1])
-                    Console.Write($"{arr[i + 1]} ");
+                if (array[i] < array[i + 1])
+                    Console.Write($"{array[i + 1]} ");
             }
         }
     }
