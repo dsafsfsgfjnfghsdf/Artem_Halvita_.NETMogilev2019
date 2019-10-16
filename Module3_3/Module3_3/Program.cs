@@ -11,20 +11,20 @@ namespace Module3_3
         static void Main(string[] args)
         {
             Console.Write("Введите количество  чисел Фибонначи: ");
-            int n = Convert.ToInt32(Console.ReadLine());
+            int quantityNumbers = Convert.ToInt32(Console.ReadLine());
 
-            int f1 = 0;
-            int f2 = 1;
-            int fn;
+            int fibonacci1 = 0;
+            int fibonacci2 = 1;
+            int fibonacciN;
 
-            Console.Write($"\n{f1} {f2} ");
+            Console.Write($"\n{fibonacci1} {fibonacci2} ");
 
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < quantityNumbers; i++)
             {
-                fn = f1 + f2;
-                Console.Write($"{fn} ");
-                f1 = f2;
-                f2 = fn;
+                fibonacciN = fibonacci1 + fibonacci2;
+                Console.Write($"{fibonacciN} ");
+                fibonacci1 = fibonacci2;
+                fibonacci2 = fibonacciN;
             }
         }
     }
