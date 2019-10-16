@@ -8,8 +8,7 @@ namespace Module2_4
 {
     class Figures
     {
-        static double pi = 3.1415;
-        static public int GetFigure()
+        public static int GetFigure()
         {
             Console.WriteLine("Выберите фигуру:\n");
             Console.WriteLine("1. Треугольник");
@@ -17,62 +16,62 @@ namespace Module2_4
             Console.WriteLine("3. Круг");
 
             Console.Write("\nОтвет: ");
-            int FigureSelect = Convert.ToInt32(Console.ReadLine());
+            int figureSelect = Convert.ToInt32(Console.ReadLine());
 
-            return FigureSelect;
+            return figureSelect;
         }
-        static public int GetFigureCharacteristic()
+        public static int GetFigureCharacteristic()
         {
             Console.WriteLine("\nВыберите численную характеристику:\n");
             Console.WriteLine("1. Периметр");
             Console.WriteLine("2. Площадь");
 
             Console.Write("\nОтвет: ");
-            int FigureCharacteristicSelect = Convert.ToInt32(Console.ReadLine());
+            int figureCharacteristicSelect = Convert.ToInt32(Console.ReadLine());
 
-            return FigureCharacteristicSelect;
+            return figureCharacteristicSelect;
         }
 
-        static public double TrianglePerimetr()
+        public static double TrianglePerimetr()
         {
             Console.Write("\nВведите сторону a: ");
-            double a = Convert.ToInt32(Console.ReadLine());
+            double lineA = Convert.ToInt32(Console.ReadLine());
             Console.Write("Введите сторону b: ");
-            double b = Convert.ToInt32(Console.ReadLine());
+            double lineB = Convert.ToInt32(Console.ReadLine());
             Console.Write("Введите сторону c: ");
-            double c = Convert.ToInt32(Console.ReadLine());
+            double lineC = Convert.ToInt32(Console.ReadLine());
 
-            return a + b + c;
+            return lineA + lineB + lineC;
         }
-        static public double TriangleSquare()
+        public static double TriangleSquare()
         {
             Console.Write("\nВведите сторону a: ");
-            double a = Convert.ToInt32(Console.ReadLine());
+            double lineA = Convert.ToInt32(Console.ReadLine());
             Console.Write("Введите сторону b: ");
-            double b = Convert.ToInt32(Console.ReadLine());
+            double lineB = Convert.ToInt32(Console.ReadLine());
             Console.Write("Введите сторону c: ");
-            double c = Convert.ToInt32(Console.ReadLine());
+            double lineC = Convert.ToInt32(Console.ReadLine());
 
-            double p = (a + b + c) / 2;
+            double halfPerimetr = (lineA + lineB + lineC) / 2;
 
-            return Math.Sqrt(p * (p - a) * (p - b) * (p - c));
+            return Math.Sqrt(halfPerimetr * (halfPerimetr - lineA) * (halfPerimetr - lineB) * (halfPerimetr - lineC));
         }
 
-        static public double TrianglePeirmetr(double TriangleSquare)
+        public static double TrianglePeirmetr(double triangleSquare)
         {
             Console.Write("\nВведите площадь круга вписанной в треугольник: ");
-            double CircleSquare = Convert.ToDouble(Console.ReadLine());
+            double circleSquare = Convert.ToDouble(Console.ReadLine());
 
-            return TriangleSquare / Math.Sqrt(CircleSquare / pi) * 2;
+            return triangleSquare / Math.Sqrt(circleSquare / Math.PI) * 2;
         }
-        static public double TriangleSquare(double TrianglePerimetr)
+        public static double TriangleSquare(double trianglePerimetr)
         {
             Console.Write("\nВведите площадь круга вписанной в треугольник: ");
-            double CircleSquare = Convert.ToDouble(Console.ReadLine());
+            double circleSquare = Convert.ToDouble(Console.ReadLine());
 
-            return Math.Sqrt(CircleSquare / pi) * TrianglePerimetr / 2;
+            return Math.Sqrt(circleSquare / Math.PI) * trianglePerimetr / 2;
         }
-        static public double QuadranglePerimetr()
+        public static double QuadranglePerimetr()
         {
             Console.Write("\nВведите сторону a: ");
             double a = Convert.ToInt32(Console.ReadLine());
@@ -81,7 +80,7 @@ namespace Module2_4
 
             return (a + b) * 2;
         }
-        static public double QuadrangleSquare()
+        public static double QuadrangleSquare()
         {
             Console.Write("\nВведите сторону a: ");
             double a = Convert.ToInt32(Console.ReadLine());
@@ -90,107 +89,107 @@ namespace Module2_4
 
             return a * b;
         }
-        static public double QuadranglePeirmetr(double square)
+        public static double QuadranglePeirmetr(double square)
         {
             return Math.Sqrt(square) * 4;
         }
-        static public double QuadrangleSquare(double perimetr)
+        public static double QuadrangleSquare(double perimetr)
         {
             return Math.Pow(perimetr / 4, 2);
         }
 
-        static public double CirclePerimetr()
+        public static double CirclePerimetr()
         {
             Console.Write("\nВведите радиус: ");
             int r = Convert.ToInt32(Console.ReadLine());
 
-            return 2 * pi * r;
+            return 2 * Math.PI * r;
         }
-        static public double CircleSquare()
+        public static double CircleSquare()
         {
             Console.Write("\nВведите радиус: ");
             int r = Convert.ToInt32(Console.ReadLine());
 
-            return pi * r * r;
+            return Math.PI * r * r;
         }
-        static public double CirclePerimetr(double square)
+        public static double CirclePerimetr(double square)
         {
-            return square / pi / 2;
+            return square / Math.PI / 2;
         }
-        static public double CircleSquare(double perimetr)
+        public static double CircleSquare(double perimetr)
         {
-            return Math.Sqrt(perimetr / pi);
+            return Math.Sqrt(perimetr / Math.PI);
         }
     }
     class Program
     {
         static void Main(string[] args)
         {
-            int FigureSelect = Figures.GetFigure();
-            int FigureCharacteristicSelect = Figures.GetFigureCharacteristic();
+            int figureSelect = Figures.GetFigure();
+            int figureCharacteristicSelect = Figures.GetFigureCharacteristic();
 
-            switch (FigureSelect)
+            switch (figureSelect)
             {
                 case 1:
-                    switch (FigureCharacteristicSelect)
+                    switch (figureCharacteristicSelect)
                     {
                         case 1:
-                            double TrianglePerimetr = Figures.TrianglePerimetr();
+                            double trianglePerimetr = Figures.TrianglePerimetr();
 
-                            Console.WriteLine($"\nПериметр треугольника равен: {TrianglePerimetr}");
+                            Console.WriteLine($"\nПериметр треугольника равен: {trianglePerimetr}");
                             Console.WriteLine("\nНа основании полученных данных, площади фигур равны:");
-                            Console.WriteLine($"\nПлощадь квадрата: {Figures.QuadrangleSquare(TrianglePerimetr)}");
-                            Console.WriteLine($"Площадь круга: {Figures.CircleSquare(TrianglePerimetr)}");
+                            Console.WriteLine($"\nПлощадь квадрата: {Figures.QuadrangleSquare(trianglePerimetr)}");
+                            Console.WriteLine($"Площадь круга: {Figures.CircleSquare(trianglePerimetr)}");
                             break;
                         case 2:
-                            double TriangleSquare = Figures.TriangleSquare();
+                            double triangleSquare = Figures.TriangleSquare();
 
-                            Console.WriteLine($"\nПлощадь треугольника равна: {TriangleSquare}");
+                            Console.WriteLine($"\nПлощадь треугольника равна: {triangleSquare}");
                             Console.WriteLine("\nНа основании полученных данных, периметры фигур равны:");
-                            Console.WriteLine($"\nПериметр квадрата: {Figures.QuadranglePeirmetr(TriangleSquare)}");
-                            Console.WriteLine($"Периметр круга: {Figures.CirclePerimetr(TriangleSquare)}");
+                            Console.WriteLine($"\nПериметр квадрата: {Figures.QuadranglePeirmetr(triangleSquare)}");
+                            Console.WriteLine($"Периметр круга: {Figures.CirclePerimetr(triangleSquare)}");
                             break;
                     }
                     break;
                 case 2:
-                    switch (FigureCharacteristicSelect)
+                    switch (figureCharacteristicSelect)
                     {
                         case 1:
-                            double QuadranglePerimetr = Figures.QuadranglePerimetr();
+                            double quadranglePerimetr = Figures.QuadranglePerimetr();
 
-                            Console.WriteLine($"\nПериметр четырехугольника равен: {QuadranglePerimetr}");
+                            Console.WriteLine($"\nПериметр четырехугольника равен: {quadranglePerimetr}");
                             Console.WriteLine("\nНа основании полученных данных, площади фигур равны:");
-                            Console.WriteLine($"\nПлощадь треугольника: {Figures.TriangleSquare(QuadranglePerimetr)}");
-                            Console.WriteLine($"Площадь круга: {Figures.CircleSquare(QuadranglePerimetr)}");
+                            Console.WriteLine($"\nПлощадь треугольника: {Figures.TriangleSquare(quadranglePerimetr)}");
+                            Console.WriteLine($"Площадь круга: {Figures.CircleSquare(quadranglePerimetr)}");
                             break;
                         case 2:
-                            double QuadrangleSquare = Figures.QuadrangleSquare();
+                            double quadrangleSquare = Figures.QuadrangleSquare();
 
-                            Console.WriteLine($"\nПлощадь четырехугольника равна: {QuadrangleSquare}");
+                            Console.WriteLine($"\nПлощадь четырехугольника равна: {quadrangleSquare}");
                             Console.WriteLine("\nНа основании полученных данных, периметры фигур равны:");
-                            Console.WriteLine($"\nПериметр треугольника: {Figures.TriangleSquare(QuadrangleSquare)}");
-                            Console.WriteLine($"Периметр круга: {Figures.CircleSquare(QuadrangleSquare)}");
+                            Console.WriteLine($"\nПериметр треугольника: {Figures.TriangleSquare(quadrangleSquare)}");
+                            Console.WriteLine($"Периметр круга: {Figures.CircleSquare(quadrangleSquare)}");
                             break;
                     }
                     break;
                 case 3:
-                    switch (FigureCharacteristicSelect)
+                    switch (figureCharacteristicSelect)
                     {
                         case 1:
-                            double CirclePerimetr = Figures.CirclePerimetr();
+                            double circlePerimetr = Figures.CirclePerimetr();
 
-                            Console.WriteLine($"\nПериметр круга равен: {CirclePerimetr}");
+                            Console.WriteLine($"\nПериметр круга равен: {circlePerimetr}");
                             Console.WriteLine("\nНа основании полученных данных, площади фигур равны:");
-                            Console.WriteLine($"\nПлощадь треугольника: {Figures.TriangleSquare(CirclePerimetr)}");
-                            Console.WriteLine($"Площадь квадрата: {Figures.QuadrangleSquare(CirclePerimetr)}");
+                            Console.WriteLine($"\nПлощадь треугольника: {Figures.TriangleSquare(circlePerimetr)}");
+                            Console.WriteLine($"Площадь квадрата: {Figures.QuadrangleSquare(circlePerimetr)}");
                             break;
                         case 2:
-                            double CircleSquare = Figures.CircleSquare();
+                            double circleSquare = Figures.CircleSquare();
 
-                            Console.WriteLine($"\nПлощадь круга равна: {CircleSquare}");
+                            Console.WriteLine($"\nПлощадь круга равна: {circleSquare}");
                             Console.WriteLine("\nНа основании полученных данных, площади фигур равны:");
-                            Console.WriteLine($"\nПериметр треугольника: {Figures.TrianglePeirmetr(CircleSquare)}");
-                            Console.WriteLine($"Периметр квадрата: {Figures.QuadranglePeirmetr(CircleSquare)}");
+                            Console.WriteLine($"\nПериметр треугольника: {Figures.TrianglePeirmetr(circleSquare)}");
+                            Console.WriteLine($"Периметр квадрата: {Figures.QuadranglePeirmetr(circleSquare)}");
                             break;
                     }
                     break;
