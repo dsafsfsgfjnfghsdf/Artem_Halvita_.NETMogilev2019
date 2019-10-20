@@ -11,37 +11,35 @@ namespace Module3_8
         static void Main(string[] args)
         {
             Console.Write("Введите размерность массива: ");
-            int n = Convert.ToInt32(Console.ReadLine());
+            int sizeArray = Convert.ToInt32(Console.ReadLine());
 
-            int[,] arr = new int[n, n];
+            int[,] array = new int[sizeArray, sizeArray];
 
-            int i = 1;
-            int j;
-            int k;
-            int p = n / 2;
+            int count = 1;
+            int bijection = sizeArray / 2 + 1;
 
-            for (k = 1; k <= p; k++)
+            for (int i = 1; i <= bijection; i++)
             {
-                for (j = k - 1; j < n - k + 1; j++)
-                    arr[k - 1, j] = i++;
+                for (int j = i - 1; j < sizeArray - i + 1; j++)
+                    array[i - 1, j] = count++;
 
-                for (j = k; j < n - k + 1; j++)
-                    arr[j, n - k] = i++;
+                for (int j = i; j < sizeArray - i + 1; j++)
+                    array[j, sizeArray - i] = count++;
 
-                for (j = n - k - 1; j >= k - 1; --j)
-                    arr[n - k, j] = i++;
+                for (int j = sizeArray - i - 1; j >= i - 1; --j)
+                    array[sizeArray - i, j] = count++;
 
-                for (j = n - k - 1; j >= k; j--)
-                    arr[j, k - 1] = i++;
+                for (int j = sizeArray - i - 1; j >= i; j--)
+                    array[j, i - 1] = count++;
             }
 
             Console.WriteLine("\nПреобразованный массив:");
 
-            for (int a = 0; a < n; a++)
+            for (int n = 0; n < sizeArray; n++)
             {
-                for (int b = 0; b < n; b++)
+                for (int m = 0; m < sizeArray; m++)
                 {
-                    Console.Write("{0, 3}", arr[a, b]);
+                    Console.Write("{0, 3}", array[n, m]);
                 }
 
                 Console.WriteLine();
