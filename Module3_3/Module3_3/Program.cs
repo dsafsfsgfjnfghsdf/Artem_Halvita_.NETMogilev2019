@@ -19,7 +19,7 @@ namespace Module3_3
 
             Console.Write($"\n{fibonacci1} {fibonacci2} ");
 
-            for (int i = 0; i < quantityNumbers; i++)
+            for (int i = 0; i < quantityNumbers - 2; i++)
             {
                 fibonacciN = fibonacci1 + fibonacci2;
                 Console.Write($"{fibonacciN} ");
