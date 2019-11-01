@@ -11,15 +11,13 @@ namespace Module3_5
         static void Main(string[] args)
         {
             Console.Write("Введите натуральное число: ");
-            int number = Convert.ToInt32(Console.ReadLine());
+            string number = Console.ReadLine();
 
-            Console.Write("Введите номер разяда числа (начиная с единицы), который необходимо удалить: ");
-            int numberDigit = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Введите цифру которую необходимо удалить: ");
+            string digit = Console.ReadLine();
 
-            int leftPart = number / (int)Math.Pow(10, numberDigit) * (int)Math.Pow(10, numberDigit - 1);
-            int rightPart = number % (int)Math.Pow(10, numberDigit - 1);
+            Console.WriteLine($"Полученное число: {number.Replace(digit, "")}");
 
-            Console.WriteLine($"Полученное число: {leftPart + rightPart}");
         }
     }
 }
