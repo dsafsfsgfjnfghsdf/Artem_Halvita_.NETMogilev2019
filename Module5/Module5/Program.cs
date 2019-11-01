@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.Threading;
+
 namespace Module5
 {
     class Game
@@ -45,12 +47,8 @@ namespace Module5
                 Console.WriteLine();
             }
 
-            Console.WriteLine();
-
             for (int i = 0; i < width + 1; i++)
                 Console.Write("#");
-
-
         }
         public void Input()
         {
@@ -105,7 +103,17 @@ namespace Module5
             while (!game.gameOver)
             {
                 game.Draw();
+                Thread.Sleep(500);
+                game.Input();
+                game.Logic();
             }
         }
     }
 }
+/* 
+ * Изменить передвижение героя (по нажатию клавиши)
+ * Редактировать поле до 10х10 клеток
+ * Добавить невозможность выхода за границыыы
+ * Добавить жизней герою
+ * Добавить мины с уроном
+     */
