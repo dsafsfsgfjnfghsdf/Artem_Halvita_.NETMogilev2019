@@ -4,8 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using System.Threading;
-
 namespace Module5
 {
     class Game
@@ -28,16 +26,16 @@ namespace Module5
         {
             Console.Clear();
             
-            for(int i = 0; i < width + 1; i++)
+            for(int i = 0; i < width + 2; i++)
                 Console.Write("#");
 
             Console.WriteLine();    
 
             for (int i = 0; i < height; i++)
             {
-                for(int j = 0; j < width; j++)
+                for(int j = 0; j < width + 2; j++)
                 {
-                    if(j == 0 || j == width - 1)
+                    if(j == 0 || j == width)
                         Console.Write("#");
                     if (i == heroY && j == heroX)
                         Console.Write("H");
@@ -47,32 +45,29 @@ namespace Module5
                 Console.WriteLine();
             }
 
-            for (int i = 0; i < width + 1; i++)
+            for (int i = 0; i < width + 2; i++)
                 Console.Write("#");
         }
         public void Input()
         {
-            if (Console.KeyAvailable)
+            var keyInfo = Console.ReadKey();
+            switch (keyInfo.KeyChar)
             {
-                var keyInfo = Console.ReadKey();
-                switch (keyInfo.KeyChar)
-                {
-                    case 'w':
-                        dir = eDirection.UP;
-                        break;
-                    case 'a':
-                        dir = eDirection.LEFT;
-                        break;
-                    case 's':
-                        dir = eDirection.DOWN;
-                        break;
-                    case 'd':
-                        dir = eDirection.RIGHT;
-                        break;
-                    case 'x':
-                        gameOver = true;
-                        break;
-                }
+                case 'w':
+                    dir = eDirection.UP;
+                    break;
+                case 'a':
+                    dir = eDirection.LEFT;
+                    break;
+                case 's':
+                    dir = eDirection.DOWN;
+                    break;
+                case 'd':
+                    dir = eDirection.RIGHT;
+                    break;
+                case 'x':
+                    gameOver = true;
+                    break;
             }
         }
         public void Logic()
@@ -92,6 +87,12 @@ namespace Module5
                     heroX++;
                     break;
             }
+
+            if (heroX >= width || heroX < 0 ||
+                heroY >= height || heroY < 0)
+            {
+                gameOver = true;
+            }
         }
     }
     class Program
@@ -103,7 +104,6 @@ namespace Module5
             while (!game.gameOver)
             {
                 game.Draw();
-                Thread.Sleep(500);
                 game.Input();
                 game.Logic();
             }
@@ -111,9 +111,9 @@ namespace Module5
     }
 }
 /* 
- * Изменить передвижение героя (по нажатию клавиши)
- * Редактировать поле до 10х10 клеток
- * Добавить невозможность выхода за границыыы
+ *                                                                                                      Изменить передвижение героя (по нажатию клавиши)
+ *                                                                                                      Редактировать поле до 10х10 клеток
+ *                                                                                                      Добавить невозможность выхода за границы
  * Добавить жизней герою
  * Добавить мины с уроном
      */
