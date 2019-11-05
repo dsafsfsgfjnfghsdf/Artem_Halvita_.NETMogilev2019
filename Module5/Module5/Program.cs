@@ -16,8 +16,8 @@ namespace Module5
         public int princessX, princessY;
         public int health;
         public Tuple<int, int, int>[] mines = new Tuple<int, int, int>[numberMines];
-        public enum eDirection { LEFT, RIGHT, UP, DOWN };
-        eDirection dir;
+        public enum Direction { LEFT, RIGHT, UP, DOWN };
+        Direction dir;
         public void Setup()
         {
             gameOver = false;
@@ -55,17 +55,6 @@ namespace Module5
                         Console.Write("H");
                     else if (i == princessY && j == princessX)
                         Console.Write("P");
-                    else if (i == mines[0].Item2 && j == mines[0].Item1 ||
-                        i == mines[1].Item2 && j == mines[1].Item1 ||
-                        i == mines[2].Item2 && j == mines[2].Item1 ||
-                        i == mines[3].Item2 && j == mines[3].Item1 ||
-                        i == mines[4].Item2 && j == mines[4].Item1 ||
-                        i == mines[5].Item2 && j == mines[5].Item1 ||
-                        i == mines[6].Item2 && j == mines[6].Item1 ||
-                        i == mines[7].Item2 && j == mines[7].Item1 ||
-                        i == mines[8].Item2 && j == mines[8].Item1 ||
-                        i == mines[9].Item2 && j == mines[9].Item1)
-                        Console.Write("x");
                     else
                         Console.Write(" ");
                 }
@@ -83,16 +72,16 @@ namespace Module5
             switch (keyInfo.KeyChar)
             {
                 case 'w':
-                    dir = eDirection.UP;
+                    dir = Direction.UP;
                     break;
                 case 'a':
-                    dir = eDirection.LEFT;
+                    dir = Direction.LEFT;
                     break;
                 case 's':
-                    dir = eDirection.DOWN;
+                    dir = Direction.DOWN;
                     break;
                 case 'd':
-                    dir = eDirection.RIGHT;
+                    dir = Direction.RIGHT;
                     break;
                 case 'x':
                     gameOver = true;
@@ -103,16 +92,16 @@ namespace Module5
         {
             switch (dir)
             {
-                case eDirection.UP:
+                case Direction.UP:
                     heroY--;
                     break;
-                case eDirection.LEFT:
+                case Direction.LEFT:
                     heroX--;
                     break;
-                case eDirection.DOWN:
+                case Direction.DOWN:
                     heroY++;
                     break;
-                case eDirection.RIGHT:
+                case Direction.RIGHT:
                     heroX++;
                     break;
             }
@@ -141,7 +130,7 @@ namespace Module5
     }
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Game game = new Game();
             string answerUser = "yes";
